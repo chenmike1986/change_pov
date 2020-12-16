@@ -9,7 +9,8 @@ and test on the PoV dataset.
 "train_model_f_m6_dev_conll_gold_test_three.py" is for the Token with token-level binary features model.
 
 To run the program, you need to specify the prefix to the training data (array of numbers of training examples and 
-the default prefix is "output/training_array/conll_padding"), directory of the development data (the default directory is 
+the default prefix is "output/training_array/conll_padding", these training data files are generated from the previous step, 
+please refer to the readme file in the folder "generate_training_data"), directory of the development data (the default directory is 
 "conll_data/dev/"), directory of the testing data (the default directory is "conll_data/dev/"), numer of epochs, batch size, 
 learning rate, drop out rates, size of LSTM cell, size of hidden layer of FFN, margin for the ranking loss, patience for early stopping. 
 For example, 
