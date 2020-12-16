@@ -1,0 +1,2 @@
+f	the victim	your victim	the victim 's	your victim 's
+DT NN	PRP NN	DT NN POS	PRP NN POS
