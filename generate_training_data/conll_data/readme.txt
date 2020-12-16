@@ -1,0 +1,13 @@
+"generate_training_data.py" is used to generate data (arrays of numbers for each training example) for training 
+the mention selection system. 
+"generate_training_data_m6.py" is used to generate data (arrays of numbers for each training example) for training 
+the mention selection system (the Token with token-level binary features model) . 
+To run the program, you need to specify the directory and the name of the CoNLL training data (the default directory
+is "conll_data" and the default file name is "training_data.txt").
+You also need to provide the prefix of the output files (each output file contains 512 training examples and the default
+prefix is "output_training_array/conll_padding"). 
+For example, 
+python generate_training_data.py
+--conll_data_dir conll_data
+--training_data training_data.txt
+--output_file output_training_array/conll_padding
