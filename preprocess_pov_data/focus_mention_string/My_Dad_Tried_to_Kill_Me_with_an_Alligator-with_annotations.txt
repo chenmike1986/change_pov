@@ -1,2 +1,0 @@
-m	scott	scott 's
-NNP	NNP POS

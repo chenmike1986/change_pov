@@ -1,2 +1,0 @@
-m	michael	michael 's
-NNP	NNP POS
