@@ -1,0 +1,2 @@
+f	rebecca	rebecca 's
+NNP	NNP POS
