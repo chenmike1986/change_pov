@@ -1844,9 +1844,9 @@ def read_mention_string(focus_mention_string_path):
         mentions = line.split('\t')
         for j in range(len(mentions)):
             if i == 0 and j == 0:
-                sex = mentions[i]
+                sex = mentions[j]
             elif i == 0:
-                focus_mention_string_set.append(mentions[i])
+                focus_mention_string_set.append(mentions[j])
     
     f.close()    
     return focus_mention_string_set,sex
