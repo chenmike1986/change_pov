@@ -2976,9 +2976,9 @@ def main():
     focus_mention_string_files=["A_Walk_in_the_Woods-with_annotations.txt","Another_Bullshit_Night_in_Suck_City-with_annotations.txt","Dispatches-with_annotations.txt","How_to_change_your_mind-with_annotations.txt","I'm_a_doctor_with_annotations.txt","Mother_Night-with_annotations.txt","My_Dad_Tried_to_Kill_Me_with_an_Alligator-with_annotations.txt","Nobody_Here_But-with_annotations.txt","Notes_from_No_Man's_Land-with_annotations.txt","Selkie_Stories_Are_for_Losers_with_annotations.txt","Sweetness-with_annotations_V2.txt","The_37_with_annotations_V2.txt","The_Faraway_Nearby-with_annotations.txt","The_Handmaid's_Tale-with_annotations.txt","The_Nausea_with_annotations.txt","The_Water_That_Falls_on_You_from_Nowhere_with_annotations.txt","There's_no_recipe_for_growing_up-with_annotations.txt","Understand_with_annotations.txt", "Additional_conll_dev.txt", "Additional_conll_test.txt"]
     output_files=["walk.txt", "night.txt", "dispatches.txt", "mind.txt", "doctor.txt", "mother.txt", "dad.txt", "nobody.txt", "noman.txt", "selkie.txt", "sweetness.txt", "37.txt", "faraway.txt", "handmaid.txt", "nausea.txt", "water.txt", "recipe.txt", "understand.txt", "additional_1.txt", "additional_2.txt"]
     
-    input_files=["The_Faraway_Nearby-with_annotations.docx","The_Handmaid's_Tale-with_annotations.docx","Understand_with_annotations.docx"]
-    focus_mention_string_files=["The_Faraway_Nearby-with_annotations.txt","The_Handmaid's_Tale-with_annotations.txt","Understand_with_annotations.txt"]
-    output_files=["faraway.txt", "handmaid.txt", "understand.txt"]
+#    input_files=["The_Faraway_Nearby-with_annotations.docx","The_Handmaid's_Tale-with_annotations.docx","Understand_with_annotations.docx"]
+#    focus_mention_string_files=["The_Faraway_Nearby-with_annotations.txt","The_Handmaid's_Tale-with_annotations.txt","Understand_with_annotations.txt"]
+#    output_files=["faraway.txt", "handmaid.txt", "understand.txt"]
     
     for i in range(20):
         part_input_file = input_files[i]
