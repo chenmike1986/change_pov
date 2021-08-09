@@ -1,3 +1,8 @@
+In order to use following programs, you need to install pytorch (1.2.0), torchvision (0.4.0), cudatoolkit (10.0.130), allennlp (0.9.0).
+
+
+
+
 The program in this folder is used to preprocess the CoNLL dataset - generate fomatted data required by the mention 
 selection system.
 
