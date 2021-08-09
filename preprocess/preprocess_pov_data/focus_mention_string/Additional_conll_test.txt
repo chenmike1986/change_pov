@@ -1,2 +1,0 @@
-m	ted	ted chiang	chiang	ted 's	ted chiang 's	chiang 's
-NNP	NNP NNP	NNP	NNP POS	NNP NNP POS	NNP POS

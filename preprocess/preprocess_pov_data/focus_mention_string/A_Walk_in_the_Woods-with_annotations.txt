@@ -1,2 +1,0 @@
-m	bill	bill bryson	bryson	bill 's	bill bryson 's	bryson 's
-NNP	NNP NNP	NNP	NNP POS	NNP NNP POS	NNP POS
