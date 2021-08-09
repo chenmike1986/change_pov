@@ -8,6 +8,4 @@ The annotated pov data is in the folder "pov_data".
 
 The results in Table 5 of the paper "Changing the Narrative Perspective: From Deictic to Anaphoric Point of View" (https://arxiv.org/abs/2103.04176) are updated by fixing a bug in the way the dropout was used and the updated results are only slightly different from the ones reported in the paper.
 
-<img src="https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png" width="800px" height="auto">
-
-![Alt text](mention_selection/update_results.png?raw=true "Title")
+![alt text](https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png)
