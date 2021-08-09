@@ -1,0 +1,2 @@
+m	campbell	campbell 's
+NNP	NNP POS

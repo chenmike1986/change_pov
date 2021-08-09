@@ -1,0 +1,2 @@
+f	hanna	hanna 's
+NNP	NNP POS

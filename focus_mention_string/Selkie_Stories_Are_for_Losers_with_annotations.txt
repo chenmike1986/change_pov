@@ -1,0 +1,2 @@
+f	sofia	sofia 's
+NNP	NNP POS
