@@ -3542,12 +3542,8 @@ class RNNNet1(object):
 
         valid_losses, total_size, total_correct, total_annotated_mention, total_annotated_verb, annotated_mention_correctly_identified_incorrectly_converted_count, annotated_mention_incorrectly_identified_count, annotated_verb_correctly_identified_incorrectly_converted_count, annotated_verb_incorrectly_identified_count, identified_mention_count, identified_verb_count=self.get_model_testing_data_scenario2(f_test, f_temp_test, pov_auto_testing_data_dir, model, margin, False, True)
         valid_losses = []          
-        # correct_mention = total_annotated_mention_correctly_identified_correctly_converted
-        # correct_verb = total_annotated_verb_correctly_identified_correctly_converted
         correct_mention = total_annotated_mention - annotated_mention_correctly_identified_incorrectly_converted_count - annotated_mention_incorrectly_identified_count
         correct_verb = total_annotated_verb - annotated_verb_correctly_identified_incorrectly_converted_count - annotated_verb_incorrectly_identified_count
-        # recall = 1.0 * (correct_mention + correct_verb) / (total_annotated_mention_correctly_identified + total_annotated_mention_incorrectly_identified + total_annotated_mention_not_identified_incorrectly_converted + total_annotated_verb)
-        # precision = 1.0 * (correct_mention + correct_verb) / (total_annotated_mention_correctly_identified + total_annotated_mention_incorrectly_identified + total_identified_mention_not_annotated + total_annotated_verb_correctly_identified + total_identified_verb_not_annotated)
         recall = 1.0 * (correct_mention + correct_verb) / (total_annotated_mention + total_annotated_verb)
         precision = 1.0 * (correct_mention + correct_verb) / (identified_mention_count + identified_verb_count)
         F1 = 2*recall*precision/(recall+precision)
