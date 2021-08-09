@@ -3703,7 +3703,7 @@ def main():
 
     parser.add_argument('--conll_data_dir',
                     type=str,
-                    default='/hoome/mc277509/generate_training_data/output_training_array/conll_padding',
+                    default='change_pove/preprocess/generate_training_data/output_training_array/conll_padding',
                     help='Directory to the conll training data.')
     parser.add_argument('--development_data_dir',
                     type=str,
@@ -3723,7 +3723,7 @@ def main():
                     help='Path of the testing data.')
     parser.add_argument('--loaded_model_path',
                     type=str,
-                    default='m1_3.pt',
+                    default='m1.pt',
                     help='Path of the loaded model.')
     parser.add_argument('--is_training',
                     type=int,
