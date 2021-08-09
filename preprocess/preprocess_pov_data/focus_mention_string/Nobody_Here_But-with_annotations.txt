@@ -1,0 +1,2 @@
+m	bill	bill 's
+NNP	NNP POS
