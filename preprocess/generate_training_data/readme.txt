@@ -3,7 +3,7 @@ the mention selection system.
 "generate_training_data_m6.py" is used to generate data (arrays of numbers for each training example) for training 
 the mention selection system (the Token with token-level binary features model) . 
 To run the program, you need to specify the directory and the name of the CoNLL training data (the default directory
-is "conll_data" and the default file name is "training_data.txt").
+is "conll_data" and the default file name is "training_data.txt"; this file is a .rar file due to the permitted size by Github; to use it, you need to extract it).
 You also need to provide the prefix of the output files (each output file contains 512 training examples and the default
 prefix is "output_training_array/conll_padding"). 
 For example, 
