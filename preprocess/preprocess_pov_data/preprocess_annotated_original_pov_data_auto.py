@@ -1105,9 +1105,9 @@ def change_verb_conjugation(document_text, start_pos_to_focus_entity_mention, st
         dependencies = result['predicted_dependencies']
         predicted_heads = result['predicted_heads']
         
-        print(sentence)
-        print(dependencies)
-        print(predicted_heads)
+        #print(sentence)
+        #print(dependencies)
+        #print(predicted_heads)
         for j in range(len(tokens)):
             token = tokens[j]
             token_index = token_count
@@ -2357,6 +2357,7 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
     f.write('<document_text>')
     f.write('\n')
     
+    max_output_token_count = 0
 #    ann_men_iden = 0
 #    ann_men_not_iden = 0
 #    iden_men_not_ann = 0
@@ -2513,6 +2514,7 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
                 
                 pre_padding_count = 0
             
+                output_token_count = 0
                 for j in range(len(converted_pre_mention_sequence)):
                     mention = converted_pre_mention_sequence[j]
                     if mention == '<pad>':
@@ -2523,6 +2525,8 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
                     start_pos = pre_start_pos_list[j-pre_padding_count]
                     tokens = tokens_list[sent_index]
                     token_index_list = sentence_num_to_token_index_list[sent_index]
+                    
+                    output_token_count = output_token_count + len(tokens)
                     
                     offset = 0
                     sentence_text = ""   
@@ -2608,6 +2612,8 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
                     tokens = tokens_list[sent_index]
                     token_index_list = sentence_num_to_token_index_list[sent_index]
                     
+                    output_token_count = output_token_count + len(tokens)
+                    
                     offset=0
                     sentence_text = ""
                     h = 0
@@ -2656,6 +2662,9 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
                     f.write("<post_mention_sentence_num>: ")
                     f.write(str(sent_index))
                     f.write("\n")
+                
+                if output_token_count > max_output_token_count:
+                    max_output_token_count = output_token_count
                     
                 f.write("<post_mention_cluster_id_sequence>: ")
                 for X_cluster_id in post_mention_cluster_id_sequence:
@@ -2734,6 +2743,9 @@ def process_data_auto(output_file, document_text, start_pos_to_mention_conversio
                 f.write(identified_verb_conversion._converted_text.lower())
                 f.write('\n')
 
+ 
+    print("max output token count: ")
+    print(max_output_token_count)
 #    print(ann_men_iden)
 #    print(ann_men_not_iden)
 #    print(iden_men_not_ann)
@@ -2939,7 +2951,8 @@ def read_mention_string(focus_mention_string_path):
             elif i == 0:
                 focus_mention_string_set.append(mentions[j])
     
-    f.close()    
+    f.close()
+    print(focus_mention_string_set)
     return focus_mention_string_set,sex
 
 def main():

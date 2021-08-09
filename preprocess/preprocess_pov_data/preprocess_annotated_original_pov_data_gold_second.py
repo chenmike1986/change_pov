@@ -1362,6 +1362,8 @@ def process_data_gold(output_file, document_text, start_pos_to_mention_conversio
     f.write('\n')
     f.write('<document_text>')
     f.write('\n')
+    
+    max_output_token_count = 0
     ann_mention = 0
     for sent_num in sorted(sent_num_to_mentions.keys()):
         mentions = sent_num_to_mentions[sent_num]
@@ -1492,6 +1494,8 @@ def process_data_gold(output_file, document_text, start_pos_to_mention_conversio
                 f.write("\n")
                 
                 pre_padding_count = 0
+                
+                output_token_count = 0
                 for j in range(len(converted_pre_mention_sequence)):
                     mention = converted_pre_mention_sequence[j]
                     if mention == '<pad>':
@@ -1501,6 +1505,9 @@ def process_data_gold(output_file, document_text, start_pos_to_mention_conversio
                     this_mentions = sent_num_to_mentions[sent_index]
                     start_pos = pre_start_pos_list[j-pre_padding_count]
                     tokens = tokens_list[sent_index]
+                    
+                    output_token_count = output_token_count + len(tokens)
+                    
                     token_index_list = sentence_num_to_token_index_list[sent_index]
                     offset = 0
                     sentence_text = ""
@@ -1583,6 +1590,9 @@ def process_data_gold(output_file, document_text, start_pos_to_mention_conversio
                     start_pos = post_start_pos_list[j]
                     tokens = tokens_list[sent_index]
                     token_index_list = sentence_num_to_token_index_list[sent_index]
+                    
+                    output_token_count = output_token_count + len(tokens)
+                    
                     offset = 0
                     sentence_text = ""
                     h = 0
@@ -1643,6 +1653,9 @@ def process_data_gold(output_file, document_text, start_pos_to_mention_conversio
                     f.write(str(X_mention_distance))
                     f.write("\t")                  
                 f.write("\n")  
+                
+    print("max output token count: ")
+    print(max_output_token_count)
 
 def identify_gender(start_pos, end_pos, cfr_document, cfr_clusters, cfr_index_to_token_index, token_index_to_start_pos, start_pos_to_token):
     male_pronouns = {'he','him','his','himself'}
