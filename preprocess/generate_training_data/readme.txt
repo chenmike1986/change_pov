@@ -1,3 +1,7 @@
+In order to use following programs, you need to install pytorch (1.2.0), torchvision (0.4.0), cudatoolkit (10.0.130), pytorch-pretrained-bert (0.6.2).
+
+
+
 "generate_training_data.py" is used to generate data (arrays of numbers for each training example) for training 
 the mention selection system. 
 "generate_training_data_m6.py" is used to generate data (arrays of numbers for each training example) for training 
