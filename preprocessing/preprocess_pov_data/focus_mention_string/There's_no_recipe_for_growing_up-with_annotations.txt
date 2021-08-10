@@ -1,0 +1,2 @@
+f	scaachi	scaachi 's
+NNP	NNP POS

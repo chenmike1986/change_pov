@@ -1,0 +1,2 @@
+m	leon	leon 's
+NNP	NNP POS
