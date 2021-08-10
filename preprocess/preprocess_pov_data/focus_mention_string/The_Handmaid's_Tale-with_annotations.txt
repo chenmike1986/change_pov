@@ -1,2 +1,0 @@
-f	june	june 's
-NNP	NNP POS
