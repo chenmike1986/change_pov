@@ -15,4 +15,4 @@ The annotated pov data is in the folder "pov_data".
 
 The results in Table 5 of the paper are updated. We fixed a bug related to the way dropout was used, which leads to slightly different results (overall better), as shown in the table below.
 
-<img src="https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png" width="400" height="100">
+<img align="center" src="https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png" width="400" height="100">
