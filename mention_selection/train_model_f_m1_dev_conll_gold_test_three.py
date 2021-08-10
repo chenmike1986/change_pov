@@ -3699,7 +3699,7 @@ def main():
 
     parser.add_argument('--conll_data_dir',
                     type=str,
-                    default='change_pov/preprocess/generate_training_data/output_training_array/conll_padding',
+                    default='change_pov/preprocessing/generate_training_data/output_training_array/conll_padding',
                     help='Directory to the conll training data.')
     parser.add_argument('--development_data_dir',
                     type=str,
