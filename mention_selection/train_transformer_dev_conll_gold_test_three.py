@@ -2956,7 +2956,8 @@ class POVTransformer(object):
             model.train()
             start_time = time.time()
             s = 0
-            while s < 3273:
+            #while s < 3273:
+            while s < 4
                 text_batch_1, batch_Y_1, mention_pos_list_1, text_batch_2, batch_Y_2, mention_pos_list_2, batch_label = self.get_batch(training_data_path, s+1)
                 for j in range(4):
                     optimizer.zero_grad()
@@ -3102,7 +3103,7 @@ def main():
 
     parser.add_argument('--conll_data_dir',
                     type=str,
-                    default='change_pov/preprocessing/generate_training_data/output_training_array/conll_padding',
+                    default='change_pov/preprocessing/generate_training_data/output_training_array_transformer/conll_padding',
                     help='Directory to the conll training data.')
     parser.add_argument('--development_data_dir',
                     type=str,
