@@ -28,7 +28,7 @@ the training data, you can go to the directory "preprocessing/generate_training_
 You also need to specify the directory of the development data (the default directory is "conll_data/dev/"), number of epochs, batch size, learning rate, drop out rates, 
 size of LSTM cell, size of hidden layer of FFN, margin for the ranking loss, patience for early stopping. 
 For example, 
-python train_model_f_m2_dev_conll_gold_test_three.py 
+python train_model_lstm_attention.py 
 --conll_data_dir change_pov/preprocessing/generate_training_data/output_training_array/conll_padding
 --development_data_dir conll_data/dev/
 --loaded_model_path None
@@ -36,26 +36,26 @@ python train_model_f_m2_dev_conll_gold_test_three.py
 --num_epochs 200
 --batch_size 512
 --learning_rate 12e-5
---dropout_rate_1 0.3
---dropout_rate_2 0.2
---dropout_rate_3 0.5
---dropout_rate_4 0.5
+--dropout_rate_1 0.01
+--dropout_rate_2 0.01
+--dropout_rate_3 0.1
+--dropout_rate_4 0.1
 --lstm_size 50
 --hidden_size 100
 --margin 0.05
 --patience 10
 In testing mode, you do need to specify the model path:
---loaded_model_path 'm2.pt'
+--loaded_model_path 'm_lstm_attention.pt'
 You also need to specify the mode:
 --is_training 0
 You also need to specify the directory of the CoNLL testing data (the default directory is "conll_data/test/"), the directory of the 
 PoV testing data (the gold and auto setting).
 For example,
-python train_model_f_m2_dev_conll_gold_test_three.py 
+python train_model_lstm_attention.py 
 --development_data_dir conll_data/test/
 --pov_gold_testing_data_dir pov_data_gold/
 --pov_auto_testing_data_dir pov_data_auto/test/
---loaded_model_path 'm2.pt'
+--loaded_model_path 'm_lstm_attention.pt'
 --is_training 0
 
 
