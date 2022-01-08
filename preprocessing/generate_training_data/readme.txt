@@ -32,7 +32,7 @@ python generate_training_data_transformer_2_1.py
 "generate_training_data_transformer_2_1_pov.py" is used to generate data (arrays of numbers for each training example) for fine-tuning 
 the mention selection system (the Transformer models). 
 To run the program, you need to specify the directory of the PoV data (the default directory
-is "pov_data".
+is "pov_data").
 You also need to provide the prefix of the output files (each output file contains 512 training examples and the default
 prefix is "output_training_array_transformer_pov/conll_padding"). 
 For example, 
