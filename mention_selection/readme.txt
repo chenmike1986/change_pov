@@ -60,10 +60,10 @@ python train_model_lstm_attention.py
 
 
 
-In order to run the Transformer model, you need to install the following packages: cudatoolkit, pytorch, torchvision, transformers, tensorboard.
+In order to run the Transformer model, you need to install the following packages: cudatoolkit (10.2.89), pytorch (1.8.1), torchvision (0.9.1), transformers (4.5.0).
 
 
-The program "train_transformer_2_1.py" is used to do mention selection using the "Transformer: Coref-Attention + Self-Attention (O)" model, which validates on the CoNLL data 
+The program "train_transformer_dev_conll_gold_test_three.py" is used to do mention selection using the Transformer model, which validates on the CoNLL data 
 and tests on the CoNLL and PoV dataset.
 
 This program can be run in two modes: training and testing, you need to specify the mode, the default is the training mode (the testing mode is 0):
@@ -75,7 +75,7 @@ the default prefix is "change_pov/preprocessing/generate_training_data/output_tr
 the training data, you can go to the directory "preprocessing/generate_training_data/" for detailed descriptions.
 You also need to specify the directory of the development data (the default directory is "conll_data/dev_transformer/"), number of epochs, batch size, learning rate, drop out rates, margin for the ranking loss, patience for early stopping. 
 For example, 
-python train_transformer_2_1.py 
+python train_transformer_dev_conll_gold_test_three.py 
 --conll_data_dir change_pov/preprocessing/generate_training_data/output_training_array_transformer/conll_padding
 --development_data_dir conll_data/dev_transformer/
 --loaded_model_path None
@@ -87,47 +87,15 @@ python train_transformer_2_1.py
 --margin 0.1
 --patience 10
 In testing mode, you do need to specify the model path (the trained model is not available right now):
---loaded_model_path 'm_transformer_2_old.pt'
+--loaded_model_path 'm_transformer.pt'
 You also need to specify the mode:
 --is_training 0
-You also need to specify the directory of the CoNLL testing data (the default directory is "conll_data/test_transformer/").
+You also need to specify the directory of the CoNLL testing data (the default directory is "conll_data/test_transformer/"), the directory of the 
+PoV testing data (the gold and auto setting).
 For example,
 python train_model_f_m2_dev_conll_gold_test_three.py 
 --development_data_dir conll_data/test_transformer/
---loaded_model_path 'm_transformer_2_old.pt'
+--pov_gold_testing_data_dir pov_data_transformer_gold/
+--pov_auto_testing_data_dir pov_data_transformer_auto/test/
+--loaded_model_path 'm_transformer.pt'
 --is_training 0
-
-The program "train_transformer_2_1_fine_tune_on_pov.py" is used to fine tune the "Transformer: Coref-Attention + Self-Attention (O)" model trained on the CoNLL data, which was trained for 10 epochs on the training portion of the PoV data and tested on the testing portion of the PoV data. Then we trained CoNLL model for 10 epochs on the testing portion of the PoV data and tested on the training portion of the PoV data.
-
-This program can be run in two modes: training and testing, you need to specify the mode, the default is the training mode (the testing mode is 0):
---is_training 1
-In training mode, you do not need to specify the model path:
---loaded_model_path None
-You need to specify the path and the prefix to the training data (array of numbers of training examples and 
-the default prefix is "change_pov/preprocessing/generate_training_data/output_training_array_transformer_pov/conll_padding"). The training data is so big that we only upload one training batch. To generate 
-the training data, you can go to the directory "preprocessing/generate_training_data/" for detailed descriptions.
-You also need to specify number of epochs, batch size, learning rate, drop out rates, margin for the ranking loss, patience for early stopping. 
-For example, 
-python train_transformer_2_1_fine_tune_on_pov.py 
---conll_data_dir change_pov/preprocessing/generate_training_data/output_training_array_transformer/conll_padding
---loaded_model_path None
---is_training 1
---num_epochs 10
---batch_size 512
---learning_rate 12e-5
---dropout_rate_1 0.1
---margin 0.1
---patience 10
-In testing mode, you do need to specify the model path (the trained model is not available right now):
---loaded_model_path 'm_transformer_2_old_tuned_on_train.pt'
-You also need to specify the mode:
---is_training 0
-You also need to specify the directory of the PoV testing data (the default directory is "conll_data/test_transformer/").
-For example,
-python train_model_f_m2_dev_conll_gold_test_three.py 
---development_data_dir conll_data/test/
---pov_gold_testing_data_dir pov_data_gold/
---pov_auto_testing_data_dir pov_data_auto/test/
---loaded_model_path 'm_transformer_2_old.pt'
---is_training 0
-
