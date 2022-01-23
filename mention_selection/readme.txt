@@ -16,7 +16,6 @@ and test on the CoNLL and PoV dataset.
 "train_model_f_m4_dev_conll_gold_test_three.py" is for the Token + Mention without binary features model.
 "train_model_f_m5_dev_conll_gold_test_three.py" is for the Token + Mention without mention-level binary features model.
 "train_model_f_m6_dev_conll_gold_test_three.py" is for the Token with token-level binary features model.
-"train_model_lstm_attention.py" is for the LSTM-attention model.
 
 This program can be run in two modes: training and testing, you need to specify the mode, the default is the testing mode (the training mode is 1):
 --is_training 0 
