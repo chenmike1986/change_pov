@@ -1,4 +1,4 @@
-In order to use following programs, you need to install pytorch, torchvision, cudatoolkit, transformers.
+In order to use following programs, you need to install pytorch (1.2.0), torchvision (0.4.0), cudatoolkit (10.0.130), pytorch-pretrained-bert (0.6.2).
 
 
 
