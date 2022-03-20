@@ -1,0 +1,2 @@
+m	mike	mike 's
+NNP	NNP POS

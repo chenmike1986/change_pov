@@ -1,0 +1,2 @@
+m	jean	jean 's
+NNP	NNP POS

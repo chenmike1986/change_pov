@@ -1,0 +1,2 @@
+f	mary	mary 's
+NNP	NNP POS

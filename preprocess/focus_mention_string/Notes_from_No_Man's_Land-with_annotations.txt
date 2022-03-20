@@ -1,0 +1,2 @@
+f	eula	eula 's
+NNP	NNP POS
