@@ -37,9 +37,16 @@ python preprocess_annotated_original_pov_data_auto.py
 
 #### Mention selection
 
-In the "mention_selection" folder, it contains the pipeline component: mention selection.
+In the "mention_selection" folder, it contains the pipeline component: mention selection. The mention selection part is accomplished by different models, from ranking to prompt-based generation.
 
-There are 6 models in total, described in 
+The ranking models are implemented by:
+file  | model
+------------- | -------------
+train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM
+train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM
+train_model_lstm_attention.py  | LSTM-attention
+train_transformer_2_1.py  | Coreference-modulated self-attention
+
 The results in Table 5 of the paper are updated. We fixed a bug related to the way dropout was used, which leads to slightly different results (overall better), as shown in the table below.
 
 <p align="center">
