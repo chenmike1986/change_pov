@@ -20,9 +20,9 @@ cudatoolkit, pytorch, torchvision, transformers, tensorboard, allennlp, allennlp
 
 #### Preprocess
 
-In the "preprocessing" folder, it contains the pipeline components: identification of entity mentions and coreference resolution, change of verb conjugations and generation of candidate mention strings as described in the paper <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>. 
+In the "preprocess" folder, it contains the pipeline components: identification of entity mentions and coreference resolution, change of verb conjugations and generation of candidate mention strings as described in the paper <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>. 
 
-In order to preprocess the PoV dataset, go to the directory "preprocess_pov_data" under the "preprocessing" folder and run the following command:
+In order to preprocess the PoV dataset, run the following command:
 
 python preprocess_annotated_original_pov_data_auto.py
 
