@@ -14,11 +14,19 @@ The order to use each component is as follows: preprocess, mention selection.
 
 ### Dependencies
 
-### Executing program
-The annotated pov data is in the folder "pov_data".
+cudatoolkit, pytorch, torchvision, transformers, tensorboard, allennlp, allennlp-models.
 
+### Executing program
+
+#### Preprocess
+
+In the "preprocessing" folder, it contains the pipeline components: identification of entity mentions and coreference resolution, change of verb conjugations and generation of candidate mention strings as described in the paper <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>. 
 The results in Table 5 of the paper are updated. We fixed a bug related to the way dropout was used, which leads to slightly different results (overall better), as shown in the table below.
 
 <p align="center">
 <img src="https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png" width="450" height="120">
 </p>
+
+### Dataset
+
+The annotated pov data is in the folder "pov_data".
