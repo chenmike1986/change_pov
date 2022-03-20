@@ -40,12 +40,67 @@ python preprocess_annotated_original_pov_data_auto.py
 In the "mention_selection" folder, it contains the pipeline component: mention selection. The mention selection part is accomplished by different models, from ranking to prompt-based generation.
 
 The ranking models are implemented by:
-file  | model
+file  | model | trained model
 ------------- | -------------
-train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM
+train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM  | 
 train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM
 train_model_lstm_attention.py  | LSTM-attention
 train_transformer_2_1.py  | Coreference-modulated self-attention
+
+These programs can be run in two modes: training and testing, you need to specify the mode, the default is the testing mode (the training mode is 1):
+
+--is_training 0 
+
+In training mode, you do not need to specify the model path:
+
+--loaded_model_path None
+
+These models were trained on CoNLL dataset, which is too big to upload to Github, and anyone who is interested in the training data can contact the author directly by "mc277509@ohio.edu".
+
+In order to run the program, you need to specify the path and the prefix to the training data, the directory of the development data when running in the training mode, the directory of the CoNLL and PoV testing data when running in the testing mode, number of epochs, batch size, learning rate, drop out rates, size of LSTM cell, size of hidden layer of FFN, margin for the ranking loss, patience for early stopping. 
+
+For example, 
+
+python train_model_lstm_attention.py 
+
+--conll_data_dir change_pov/preprocessing/generate_training_data/output_training_array/conll_padding
+
+--development_data_dir conll_data/dev/
+
+--pov_gold_testing_data_dir pov_data_gold/
+
+--pov_auto_testing_data_dir pov_data_auto/test/
+
+--loaded_model_path None
+
+--is_training 1
+
+--num_epochs 200
+
+--batch_size 512
+
+--learning_rate 12e-5
+
+--dropout_rate_1 0.01
+
+--dropout_rate_2 0.01
+
+--dropout_rate_3 0.1
+
+--dropout_rate_4 0.1
+
+--lstm_size 50
+
+--hidden_size 100
+
+--margin 0.05
+
+--patience 10 
+
+In testing mode, you also need to specify the model path:
+
+--loaded_model_path 'm_lstm_attention.pt'
+
 
 ### Dataset
 
