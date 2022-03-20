@@ -1,2 +1,0 @@
-m	matt matt 's
-NNP	NNP POS

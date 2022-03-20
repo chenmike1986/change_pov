@@ -1,2 +1,0 @@
-m	John	John 's
-NNP	NNP POS
