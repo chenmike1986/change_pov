@@ -1,7 +1,7 @@
 # PoV Change
 This is a repository of the code and the data used for the experiments reported in the papers:
 
-<a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>
+<a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>,
 Mike Chen and Razvan Bunescu, 
 <a href="https://www.journals.elsevier.com/information-processing-and-management">Information Processing & Management</a>, Special Issue on Creative Language Processing, 2021.
 
