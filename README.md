@@ -1,5 +1,6 @@
 # PoV Change
 This is a repository of the code and the data used for the experiments reported in the papers:
+
 <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>
 Mike Chen and Razvan Bunescu, 
 <a href="https://www.journals.elsevier.com/information-processing-and-management">Information Processing & Management</a>, Special Issue on Creative Language Processing, 2021.
@@ -8,9 +9,7 @@ Changing the Narrative Perspective: From Ranking to Prompt-Based Generation of E
 
 ## Description
 
-This project includes two parts: preprocess and mention selection.
-
-The order to use each component is as follows: preprocess, mention selection.
+This project implements the tool for changing the narrative perspective, which consists of a text processing pipeline as described in <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a>: (1) mention identification and coreference resolution; (2) change of verb conjugation; (3) generation of candidate mention strings; (4) mention selection. Step (1) to (3) are implemented as preprocessing steps, which are in the folder "preprocess" and step (4) is accomplished by different models as described in the two papers mentioned above, which are in the folder "mention_selection".
 
 ## Getting Started
 
