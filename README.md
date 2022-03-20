@@ -47,12 +47,14 @@ train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM
 train_model_lstm_attention.py  | LSTM-attention
 train_transformer_2_1.py  | Coreference-modulated self-attention
 
-The results in Table 5 of the paper are updated. We fixed a bug related to the way dropout was used, which leads to slightly different results (overall better), as shown in the table below.
+### Dataset
+
+The annotated pov data is in the folder "pov_data".
+
+## Miscellaneous
+
+The results in Table 5 of the paper <a href="https://arxiv.org/abs/2103.04176">Changing the Narrative Perspective: From Deictic to Anaphoric Point of View</a> are updated. We fixed a bug related to the way dropout was used, which leads to slightly different results (overall better), as shown in the table below.
 
 <p align="center">
 <img src="https://github.com/chenmike1986/change_pov/blob/main/mention_selection/update_results.png" width="450" height="120">
 </p>
-
-### Dataset
-
-The annotated pov data is in the folder "pov_data".
