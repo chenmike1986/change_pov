@@ -40,12 +40,12 @@ python preprocess_annotated_original_pov_data_auto.py
 In the "mention_selection" folder, it contains the pipeline component: mention selection. The mention selection part is accomplished by different models, from ranking to prompt-based generation.
 
 The ranking models are implemented by:
-file  | model | trained model
-------------- | -------------
-train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM  | 
-train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM
-train_model_lstm_attention.py  | LSTM-attention
-train_transformer_2_1.py  | Coreference-modulated self-attention
+file  | model | trained model | validation data | 
+------------- | ------------- | ------------- | ------------- |
+train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM  | m1.pt  | conll_data/dev/ |
+train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM | m2.pt  | conll_data/dev/ |
+train_model_lstm_attention.py  | LSTM-attention | m_lstm_attention.pt | conll_data/dev/ |
+train_transformer_2_1.py  | Coreference-modulated self-attention | m_transformer.pt | conll_data/test/ |
 
 These programs can be run in two modes: training and testing, you need to specify the mode, the default is the testing mode (the training mode is 1):
 
