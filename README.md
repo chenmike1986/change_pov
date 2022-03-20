@@ -45,7 +45,15 @@ file  | model | trained model | validation data |
 train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM  | m1.pt  | conll_data/dev/ |
 train_model_f_m2_dev_conll_gold_test_three.py  | Token + Mention LSTM | m2.pt  | conll_data/dev/ |
 train_model_lstm_attention.py  | LSTM-attention | m_lstm_attention.pt | conll_data/dev/ |
-train_transformer_2_1.py  | Coreference-modulated self-attention | m_transformer.pt | conll_data/test/ |
+train_transformer_2_1.py  | Coreference-modulated self-attention | m_transformer.pt | conll_data/dev_transformer/ |
+
+The testing data information are listed:
+ model | CoNLL test data | PoV mention selection data | PoV end-to-end data|
+------------- | ------------- | ------------- | ------------- |
+Token LSTM  | conll_data/test/  | pov_data_gold/ | pov_data_auto/ |
+Token + Mention LSTM | conll_data/test/  | pov_data_gold/ | pov_data_auto/ |
+LSTM-attention | conll_data/test/ | pov_data_gold/ | pov_data_auto/ |
+Coreference-modulated self-attention | conll_data/test_transformer/ | pov_data_transformer_gold/ | pov_data_transformer_auto/ |
 
 These programs can be run in two modes: training and testing, you need to specify the mode, the default is the testing mode (the training mode is 1):
 
