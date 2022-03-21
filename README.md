@@ -15,7 +15,7 @@ This project implements the tool for changing the narrative perspective, which c
 
 ### Dependencies
 
-cudatoolkit, pytorch, torchvision, transformers, tensorboard, allennlp, allennlp-models.
+cudatoolkit, pytorch, torchvision, transformers, tensorboard, allennlp, allennlp-models, openprompt.
 
 ### Executing program
 
