@@ -39,7 +39,9 @@ python preprocess_annotated_original_pov_data_auto.py
 
 In the "mention_selection" folder, it contains the pipeline component: mention selection. The mention selection part is accomplished by different models, from ranking to prompt-based generation.
 
-##### The ranking models are implemented by:
+##### The ranking models 
+
+The ranking models are implemented by:
 
 file  | model | trained model | validation data | 
 ------------- | ------------- | ------------- | ------------- |
@@ -72,13 +74,13 @@ For example,
 
 python train_model_lstm_attention.py 
 
---conll_data_dir change_pov/preprocessing/generate_training_data/output_training_array/conll_padding
+--conll_data_dir 'change_pov/preprocessing/generate_training_data/output_training_array/conll_padding'
 
---development_data_dir conll_data/dev/
+--development_data_dir 'conll_data/dev/'
 
---pov_gold_testing_data_dir pov_data_gold/
+--pov_gold_testing_data_dir 'pov_data_gold/'
 
---pov_auto_testing_data_dir pov_data_auto/test/
+--pov_auto_testing_data_dir 'pov_data_auto/test/'
 
 --loaded_model_path None
 
@@ -108,7 +110,9 @@ In testing mode, you also need to specify the model path:
 
 --loaded_model_path 'm_lstm_attention.pt'
 
-##### The prompt-based models are implemented by:
+##### The prompt-based models 
+
+The prompt-based models are implemented by:
 
 file  | model | trained model | validation data | 
 ------------- | ------------- | ------------- | ------------- |
@@ -143,15 +147,15 @@ python train_plm_few_shot_learning_auto_regressive_without_entities.py
 
 --model_name_or_path 't5/'
 
---data_dir conll_json
+--data_dir 'conll_json/'
 
---dev_data_dir conll_data/dev/
+--dev_data_dir 'conll_data/dev/'
 
---conll_test_data_dir conll_data/test/
+--conll_test_data_dir 'conll_data/test/'
 
---pov_gold_test_data_dir pov_data_gold/
+--pov_gold_test_data_dir 'pov_data_gold/'
 
---pov_auto_test_data_dir pov_data_auto/test/
+--pov_auto_test_data_dir 'pov_data_auto/test/'
 
 --loaded_model_path None
 
