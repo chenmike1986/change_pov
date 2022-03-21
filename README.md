@@ -39,7 +39,8 @@ python preprocess_annotated_original_pov_data_auto.py
 
 In the "mention_selection" folder, it contains the pipeline component: mention selection. The mention selection part is accomplished by different models, from ranking to prompt-based generation.
 
-The ranking models are implemented by:
+##### The ranking models are implemented by:
+
 file  | model | trained model | validation data | 
 ------------- | ------------- | ------------- | ------------- |
 train_model_f_m1_dev_conll_gold_test_three.py  | Token LSTM  | m1.pt  | conll_data/dev/ |
@@ -103,12 +104,66 @@ python train_model_lstm_attention.py
 
 --margin 0.05
 
---patience 10 
-
 In testing mode, you also need to specify the model path:
 
 --loaded_model_path 'm_lstm_attention.pt'
 
+##### The prompt-based models are implemented by:
+
+file  | model | trained model | validation data | 
+------------- | ------------- | ------------- | ------------- |
+train_plm_few_shot_learning_auto_regressive_without_entities.py  | Prompt-tuning with pre-trained T5 | plm-prompt-based.pt  | conll_data/dev/ |
+train_plm_few_shot_learning_auto_regressive_without_entities.py  | Prompt-tuning with fine-tuned T5 | plm-fine-tune.pt  | conll_data/dev/ |
+
+The testing data information are listed:
+ model | CoNLL test data | PoV mention selection data | PoV end-to-end data|
+------------- | ------------- | ------------- | ------------- |
+Prompt-tuning with pre-trained T5 | conll_data/test/  | pov_data_gold/ | pov_data_auto/ |
+Prompt-tuning with fine-tuned T5 | conll_data/test/  | pov_data_gold/ | pov_data_auto/ |
+
+These programs can be run in two modes: training and testing, you need to specify if the current mode is training:
+
+--is_training True 
+
+In training mode, you do not need to specify the model path:
+
+--model_path None
+
+These models were trained on CoNLL dataset, which is in the folder "conll_json".
+
+In order to run the program, you need to specify the directory of the training data, the directory of the development data when running in the training mode, the directory of the CoNLL and PoV testing data when running in the testing mode, learning rate and number of soft tokens. You also need to specify if the model is running in the pre-trained T5 or fine-tuned T5 setting: 
+
+--tune_plm False
+
+Then a complete running command could be:
+
+python train_plm_few_shot_learning_auto_regressive_without_entities.py
+
+--tune_plm False
+
+--model_name_or_path 't5/'
+
+--data_dir conll_json
+
+--dev_data_dir conll_data/dev/
+
+--conll_test_data_dir conll_data/test/
+
+--pov_gold_test_data_dir pov_data_gold/
+
+--pov_auto_test_data_dir pov_data_auto/test/
+
+--loaded_model_path None
+
+--is_training True
+
+--prompt_lr 0.3
+
+--soft_token_num 20
+
+In testing mode, you also need to specify the model path:
+
+--loaded_model_path 'plm-prompt-based.pt'
 
 ### Dataset
 
