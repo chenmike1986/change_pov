@@ -110,6 +110,8 @@ In testing mode, you also need to specify the model path:
 
 --loaded_model_path 'm_lstm_attention.pt'
 
+***Note: The trained model m_transformer.pt is too big to upload, and anyone who is interested in getting the trained model can contact the author directly by mc277509@ohio.edu
+
 ##### The prompt-based models 
 
 The prompt-based models are implemented by:
