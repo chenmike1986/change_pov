@@ -110,8 +110,6 @@ In testing mode, you also need to specify the model path:
 
 --loaded_model_path 'm_lstm_attention.pt'
 
-***Note: The trained model m_transformer.pt is too big to upload, and anyone who is interested in getting the trained model can contact the author directly by mc277509@ohio.edu
-
 ##### The prompt-based models 
 
 The prompt-based models are implemented by:
@@ -170,6 +168,8 @@ python train_plm_few_shot_learning_auto_regressive_without_entities.py
 In testing mode, you also need to specify the model path:
 
 --loaded_model_path 'plm-prompt-based.pt'
+
+***Note: The trained models 'm_transformer.pt', 'plm-prompt-based.pt' and 'plm-fine-tune.pt' are too big to upload, and anyone who is interested in getting these trained models can contact the author directly by mc277509@ohio.edu.
 
 ### Dataset
 
